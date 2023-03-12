@@ -45,11 +45,7 @@ action.payload.todolists.forEach(tl =>
 state[tl.id] = []
 )
         })
-    } /*{
-        [addTodolistAC.type]: (state , action:PayloadAction<{}>) => {},
-        [removeTodolistAC.type]: (state , action:PayloadAction<{}>) => {},
-        [setTodolistsAC.type]: (state , action:PayloadAction<{}>) => {}
-    }*/
+    }
 })
 export const tasksReducer = slice.reducer
 export const {removeTaskAC,addTaskAC,updateTaskAC,setTasksAC} = slice.actions
@@ -93,8 +89,6 @@ export const updateTaskTC = (taskId: string, domainModel: UpdateDomainTaskModelT
         const state = getState()
         const task = state.tasks[todolistId].find(t => t.id === taskId)
         if (!task) {
-            //throw new Error("task not found in the state");
-            console.warn('task not found in the state')
             return
         }
 
