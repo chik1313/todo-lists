@@ -65,7 +65,7 @@ export const removeTaskTC = (taskId: string, todolistId: string) => (dispatch: D
     todolistsAPI.deleteTask(todolistId, taskId)
 
         .then(res => {
-            console.log(res)
+
             const action = removeTaskAC({taskId, todolistId})
             dispatch(action)
         })
